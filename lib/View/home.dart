@@ -53,9 +53,9 @@ class _homepageState extends State<homepage> {
     return Scaffold(
       backgroundColor: Colors.black,
       bottomNavigationBar: Container(
-        padding: EdgeInsets.symmetric(horizontal: 45, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 45, vertical: 20),
         height: 80,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             color: Colors.blue,
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(100), topRight: Radius.circular(50))),
@@ -71,7 +71,7 @@ class _homepageState extends State<homepage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => useraccount()));
+                              builder: (context) => const useraccount()));
                     }))
           ],
         ),
@@ -81,8 +81,8 @@ class _homepageState extends State<homepage> {
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.only(left: 50, top: 50),
-              decoration: BoxDecoration(
+              margin: const EdgeInsets.only(left: 50, top: 50),
+              decoration: const BoxDecoration(
                 color: Colors.blue,
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(100),
@@ -90,7 +90,7 @@ class _homepageState extends State<homepage> {
                     topLeft: Radius.circular(100),
                     topRight: Radius.circular(100)),
               ),
-              child: Center(
+              child: const Center(
                 child: Text(
                   'Hello, \nAlic',
                   style: TextStyle(
@@ -108,14 +108,14 @@ class _homepageState extends State<homepage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Now Playing',
                     style: TextStyle(
                         color: Colors.blue,
                         fontSize: 18,
                         fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Container(
@@ -134,7 +134,7 @@ class _homepageState extends State<homepage> {
                             );
                           } else if (!snapshot.hasData ||
                               snapshot.data.length == 0) {
-                            return Center(
+                            return const Center(
                               child: Text('Tidak ada data ditemukan'),
                             );
                           } else {
@@ -168,12 +168,12 @@ class _homepageState extends State<homepage> {
                                               path,
                                               fit: BoxFit.cover,
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               height: 10,
                                             ),
                                             Text(
                                               NowPlaying.title.toString(),
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                   color: Colors.white),
                                             )
                                           ],
@@ -190,17 +190,17 @@ class _homepageState extends State<homepage> {
                           }
                         }),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
-                  Text(
+                  const Text(
                     'Popular',
                     style: TextStyle(
                         color: Colors.blue,
                         fontSize: 18,
                         fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Container(
@@ -219,7 +219,7 @@ class _homepageState extends State<homepage> {
                             );
                           } else if (!snapshot.hasData ||
                               snapshot.data.length == 0) {
-                            return Center(
+                            return const Center(
                               child: Text('Tidak ada data ditemukan'),
                             );
                           } else {
@@ -248,12 +248,12 @@ class _homepageState extends State<homepage> {
                                               path,
                                               fit: BoxFit.cover,
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               height: 10,
                                             ),
                                             Text(
                                               Popular.title.toString(),
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                   color: Colors.white),
                                             )
                                           ],
@@ -291,10 +291,10 @@ Widget buildowPlay(Map<String, dynamic> data, int index) {
         fit: BoxFit.cover,
         height: 120,
       ),
-      SizedBox(height: 8),
+      const SizedBox(height: 8),
       Text(
         title,
-        style: TextStyle(fontSize: 16),
+        style: const TextStyle(fontSize: 16),
       ),
     ],
   );

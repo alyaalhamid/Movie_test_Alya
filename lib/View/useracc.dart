@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test/View/BottomNav.dart';
+import 'package:test/View/Login.dart';
 import 'package:test/View/Myfavorite.dart';
 import 'package:test/View/home.dart';
 import 'package:test/View/Watchlistview.dart';
@@ -16,9 +17,9 @@ class _useraccountState extends State<useraccount> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Container(
-        padding: EdgeInsets.symmetric(horizontal: 45, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 45, vertical: 20),
         height: 80,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             color: Colors.blue,
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(100), topRight: Radius.circular(50))),
@@ -28,8 +29,10 @@ class _useraccountState extends State<useraccount> {
                 child: BottomNavItem(
                     ImagePath: 'assets/logo.jpg',
                     press: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => homepage()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const homepage()));
                     })),
             Expanded(
                 child: BottomNavItem(
@@ -38,7 +41,7 @@ class _useraccountState extends State<useraccount> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => useraccount()));
+                              builder: (context) => const useraccount()));
                     }))
           ],
         ),
@@ -48,9 +51,9 @@ class _useraccountState extends State<useraccount> {
           padding: const EdgeInsets.only(top: 200),
           child: Column(
             children: [
-              Row(
+              const Row(
                 children: [
-                  const Flexible(
+                  Flexible(
                     child: FractionallySizedBox(
                       widthFactor: 0.95,
                     ),
@@ -80,9 +83,9 @@ class _useraccountState extends State<useraccount> {
                       ),
                     ),
                   ),
-                  Text(
+                  const Text(
                     'Alic',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
@@ -124,7 +127,7 @@ class _useraccountState extends State<useraccount> {
                                   builder: (context) => wishlist()));
                         },
                         child: const Text(
-                          'Wishlist',
+                          'Watchlist',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 20,
@@ -158,9 +161,15 @@ class _useraccountState extends State<useraccount> {
                                           decoration: const BoxDecoration(
                                               color: Colors.red),
                                           child: TextButton(
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          const LoginScreen()));
+                                            },
                                             child: const Text(
-                                              'Keluar',
+                                              'Out',
                                               style: TextStyle(
                                                 color: Colors.white,
                                                 fontSize: 16,
@@ -168,16 +177,19 @@ class _useraccountState extends State<useraccount> {
                                             ),
                                           ),
                                         )),
+                                        const SizedBox(
+                                          width: 10,
+                                        ),
                                         Expanded(
                                             child: Container(
                                           decoration: const BoxDecoration(
-                                              color: Color(0xffABC437)),
+                                              color: Colors.blue),
                                           child: TextButton(
                                             onPressed: () {
                                               Navigator.pop(context);
                                             },
                                             child: const Text(
-                                              'Batal',
+                                              'No',
                                               style: TextStyle(
                                                   color: Colors.white,
                                                   fontSize: 16),
@@ -189,7 +201,7 @@ class _useraccountState extends State<useraccount> {
                                   ],
                                   title: const Center(
                                     child: Text(
-                                      'Keluar Aplikasi\nMyWHD?',
+                                      'Log Out?',
                                       style: TextStyle(
                                           fontSize: 24, color: Colors.grey),
                                       textAlign: TextAlign.center,
@@ -199,7 +211,7 @@ class _useraccountState extends State<useraccount> {
                               });
                         },
                         child: const Text(
-                          'KELUAR',
+                          'Log Out',
                           style: TextStyle(color: Colors.black, fontSize: 20),
                         ),
                       )),

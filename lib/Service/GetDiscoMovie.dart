@@ -1,9 +1,6 @@
 import 'dart:convert';
-
-import 'package:test/Model/DetailMovie.dart';
 import 'package:test/Model/DiscoverMovie.dart';
 import 'package:http/http.dart' as http;
-import 'package:test/Model/Popular.dart';
 
 class ApiDiscoMovie {
   final String apikey = '98c580af951d9cbf543ece8df822519c';

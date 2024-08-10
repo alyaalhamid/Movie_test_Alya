@@ -28,11 +28,11 @@ class _wishlistState extends State<wishlist> {
             onTap: () {
               Navigator.pop(context);
             },
-            child: Icon(Icons.arrow_back)),
+            child: const Icon(Icons.arrow_back)),
         elevation: 0,
         backgroundColor: Colors.transparent,
-        title: Text(
-          'My Watchlist ',
+        title: const Text(
+          'My Watchlist  ',
           style: TextStyle(color: Colors.blue, fontSize: 30),
         ),
       ),
@@ -81,7 +81,7 @@ class _wishlistState extends State<wishlist> {
                                           fit: BoxFit.cover,
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         width: 10,
                                       ),
                                       Expanded(
@@ -90,19 +90,19 @@ class _wishlistState extends State<wishlist> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(watchlistmovi.title.toString(),
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                     color: Colors.white,
                                                     fontSize: 18,
                                                     fontWeight:
                                                         FontWeight.bold)),
-                                            SizedBox(
+                                            const SizedBox(
                                               height: 3,
                                             ),
                                             Expanded(
                                               child: Text(
                                                 watchlistmovi.overview
                                                     .toString(),
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                     color: Colors.white,
                                                     fontSize: 15),
                                               ),
@@ -119,13 +119,13 @@ class _wishlistState extends State<wishlist> {
                     ],
                   );
                 } else {
-                  return Text(
+                  return const Text(
                     'No Data',
                     style: TextStyle(color: Colors.white),
                   );
                 }
               } else {
-                return Center(
+                return const Center(
                   child: CircularProgressIndicator(),
                 );
               }

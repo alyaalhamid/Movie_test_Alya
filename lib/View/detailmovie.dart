@@ -1,17 +1,16 @@
+import 'dart:typed_data';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:test/Model/DetailMovie.dart';
-import 'package:test/Model/DiscoverMovie.dart';
 import 'package:test/Model/Favorite.dart';
 import 'package:test/Model/Similar.dart';
 import 'package:test/Model/Watchlist.dart';
 import 'package:test/Service/GetDetailDiscMovie.dart';
-import 'package:test/Service/GetDiscoMovie.dart';
 import 'package:test/Service/GetSimilar.dart';
-import 'package:test/Service/GetWishlistMovie.dart';
 import 'package:test/Service/PostFavorite.dart';
 import 'package:test/Service/PostWatchlist.dart';
-import 'package:test/View/Myfavorite.dart';
+import 'package:http/http.dart' as http;
 
 class DetailMovie extends StatefulWidget {
   DetailMovie({super.key, required this.id});
@@ -43,7 +42,7 @@ class _DetailMovieState extends State<DetailMovie> {
             onTap: () {
               Navigator.pop(context);
             },
-            child: Icon(Icons.arrow_back)),
+            child: const Icon(Icons.arrow_back)),
       ),
       backgroundColor: Colors.black,
       body: Padding(
@@ -71,15 +70,48 @@ class _DetailMovieState extends State<DetailMovie> {
                                   child: data.posterPath != null &&
                                           data.posterPath!.isNotEmpty
                                       ? Image.network(
-                                          'https://image.tmdb.org/t/p/w500${snapshot.data!.backdropPath.toString()}')
+                                          'https://image.tmdb.org/t/p/w500${snapshot.data!.posterPath.toString()}')
                                       : Image.asset(
                                           'assets/tidakditemukan.jpg')),
-                              SizedBox(
+                              const SizedBox(
                                 height: 20,
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
+                                  InkWell(
+                                    onTap: () async {
+                                      var response = await http.get(
+                                        Uri.parse(
+                                            'https://image.tmdb.org/t/p/w500${snapshot.data!.posterPath.toString()}'),
+                                      );
+                                      if (response.statusCode == 200) {
+                                        final result =
+                                            await ImageGallerySaver.saveImage(
+                                                Uint8List.fromList(
+                                                    response.bodyBytes),
+                                                quality: 60,
+                                                name: 'My Movie');
+                                        print(result);
+                                      } else {
+                                        print('Failed');
+                                      }
+                                      // if(snapshot.data !=null){
+                                      //   String? path = 'https://image.tmdb.org/t/p/w500${snapshot.data!.posterPath.toString()}';
+                                      //   if(path !=null){
+                                      //     bool success = (await ImageGallerySaver.)??
+                                      //   }
+                                      // }
+                                    },
+                                    child: Image.asset(
+                                      'assets/download-3785.png',
+                                      height: 50,
+                                      width: 50,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
                                   InkWell(
                                     onTap: () async {
                                       var data = PostWatchlist(
@@ -101,7 +133,7 @@ class _DetailMovieState extends State<DetailMovie> {
                                       width: 50,
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 10,
                                   ),
                                   InkWell(
@@ -133,33 +165,33 @@ class _DetailMovieState extends State<DetailMovie> {
                                   children: [
                                     Text(
                                       snapshot.data!.title.toString(),
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           color: Colors.blue,
                                           fontSize: 24,
                                           fontWeight: FontWeight.bold),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 10,
                                     ),
-                                    Text(
+                                    const Text(
                                       'Descripstion',
                                       style: TextStyle(
                                           color: Colors.blue,
                                           fontSize: 20,
                                           fontWeight: FontWeight.bold),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 10,
                                     ),
                                     Text(
                                       snapshot.data!.overview.toString(),
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           color: Colors.white, fontSize: 16),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 10,
                                     ),
-                                    Text(
+                                    const Text(
                                       'Smilar',
                                       style: TextStyle(
                                           color: Colors.blue,
@@ -184,7 +216,7 @@ class _DetailMovieState extends State<DetailMovie> {
                                               );
                                             } else if (!snapshot.hasData ||
                                                 snapshot.data.length == 0) {
-                                              return Center(
+                                              return const Center(
                                                 child: Text(
                                                     'Tidak ada data ditemukan'),
                                               );
@@ -231,10 +263,10 @@ class _DetailMovieState extends State<DetailMovie> {
                             ],
                           );
                         } else {
-                          return Text('Tidak ada data');
+                          return const Text('Tidak ada data');
                         }
                       } else {
-                        return CircularProgressIndicator();
+                        return const CircularProgressIndicator();
                       }
                     }),
               ],

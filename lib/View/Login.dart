@@ -8,48 +8,59 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-      ),
       backgroundColor: Colors.black,
       body: Column(
         children: [
           Expanded(
             child: Container(
-              margin: EdgeInsets.only(
+              margin: const EdgeInsets.only(
                 top: 200,
               ),
               decoration: const BoxDecoration(
-                  color: Colors.white,
+                  color: Colors.black,
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(60),
                       topRight: Radius.circular(60))),
               child: Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Image.asset(
+                    'assets/logo.jpg',
+                    height: 150,
+                    width: 150,
+                  ),
+                  const SizedBox(
                     height: 20,
                   ),
-                  Text(
-                    'Selamat Datang',
+                  const Text(
+                    'WELCOME TO \nMy Movie',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        color: Colors.black,
+                        color: Colors.blue,
                         fontWeight: FontWeight.bold,
                         fontSize: 50),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
+                  const Text(
+                    'Log in First!',
+                    style: TextStyle(color: Colors.blue, fontSize: 30),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
                   Container(
-                    margin: EdgeInsets.only(left: 30, right: 30),
+                    margin: const EdgeInsets.only(left: 30, right: 30),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       border: Border.all(color: Colors.black),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                           contentPadding: EdgeInsets.only(top: 3, left: 12),
                           hintText: 'UserName',
                           hintStyle: TextStyle(
@@ -59,18 +70,18 @@ class LoginScreen extends StatelessWidget {
                           )),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 30, right: 30),
+                    margin: const EdgeInsets.only(left: 30, right: 30),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       border: Border.all(color: Colors.black),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                           contentPadding: EdgeInsets.only(top: 3, left: 12),
                           hintText: 'Password',
                           hintStyle: TextStyle(
@@ -80,7 +91,7 @@ class LoginScreen extends StatelessWidget {
                           )),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Container(
@@ -93,9 +104,9 @@ class LoginScreen extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (Context) => homepage()));
+                                  builder: (Context) => const homepage()));
                         },
-                        child: Text('Masuk')),
+                        child: const Text('Log In')),
                   ),
                 ],
               ),

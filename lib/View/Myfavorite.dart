@@ -26,10 +26,10 @@ class _MyFavoriteState extends State<MyFavorite> {
             onTap: () {
               Navigator.pop(context);
             },
-            child: Icon(Icons.arrow_back)),
+            child: const Icon(Icons.arrow_back)),
         elevation: 0,
         backgroundColor: Colors.transparent,
-        title: Text(
+        title: const Text(
           'My Favorite ',
           style: TextStyle(color: Colors.blue, fontSize: 30),
         ),
@@ -79,7 +79,7 @@ class _MyFavoriteState extends State<MyFavorite> {
                                           fit: BoxFit.cover,
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         width: 10,
                                       ),
                                       Expanded(
@@ -88,19 +88,19 @@ class _MyFavoriteState extends State<MyFavorite> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(favoritemovi.title.toString(),
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                     color: Colors.white,
                                                     fontSize: 18,
                                                     fontWeight:
                                                         FontWeight.bold)),
-                                            SizedBox(
+                                            const SizedBox(
                                               height: 3,
                                             ),
                                             Expanded(
                                               child: Text(
                                                 favoritemovi.overview
                                                     .toString(),
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                     color: Colors.white,
                                                     fontSize: 15),
                                               ),
@@ -117,13 +117,13 @@ class _MyFavoriteState extends State<MyFavorite> {
                     ],
                   );
                 } else {
-                  return Text(
+                  return const Text(
                     'No Data',
                     style: TextStyle(color: Colors.white),
                   );
                 }
               } else {
-                return Center(
+                return const Center(
                   child: CircularProgressIndicator(),
                 );
               }

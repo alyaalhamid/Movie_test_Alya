@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class detaildiscmovie {
   bool? adult;
   String? backdropPath;

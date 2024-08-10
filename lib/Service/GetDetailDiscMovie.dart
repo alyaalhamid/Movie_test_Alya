@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:test/Model/DetailMovie.dart';
 import 'package:http/http.dart' as http;
 
+/// [ApiDetailMovie] merupakan kode class untuk menarik data dari link api.
 class ApiDetailMovie {
   final String apikey = '98c580af951d9cbf543ece8df822519c';
   Future<detaildiscmovie?> getdetailmovie(int id) async {

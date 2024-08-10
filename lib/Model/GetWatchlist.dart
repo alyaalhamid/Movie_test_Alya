@@ -1,3 +1,4 @@
+/// [WatchlistMovie] merupakan model yang di dapatkan dari response API, model ini di wajibkan ada di setiap API
 class WatchlistMovie {
   int? id;
   String? original_language;

@@ -22,6 +22,11 @@ class DetailMovie extends StatefulWidget {
 }
 
 class _DetailMovieState extends State<DetailMovie> {
+  /// [detailmovie]  merupakan variabel yang diguankana untuk mendapatkan data dari future `detailmovie`.
+  ///
+  /// [similarmovie] merupakan variabel yang diguanakan untuk mendapatkan data dari future.
+  ///
+  /// [accountid] berisikan nilai static yang digunakan untuk memudahkan dalam penarikan data yang memerlukan account id
   var detailmovie;
   var similarmovie;
   int accountid = 1;

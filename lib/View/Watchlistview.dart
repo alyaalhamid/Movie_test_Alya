@@ -10,6 +10,9 @@ class wishlist extends StatefulWidget {
 }
 
 class _wishlistState extends State<wishlist> {
+  /// [moviewatchlist]  merupakan variabel yang diguankana untuk mendapatkan data dari future `moviewatchlist`.
+  ///
+  /// [accountid] berisikan nilai static yang digunakan untuk memudahkan dalam penarikan data yang memerlukan account id
   var moviewatchlist;
 
   int accountid = 1;

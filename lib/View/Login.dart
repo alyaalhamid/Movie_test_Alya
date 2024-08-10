@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test/View/home.dart';
 
+/// halaman login sebelum masuk ke halaman homepage
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 

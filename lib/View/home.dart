@@ -8,6 +8,7 @@ import 'package:test/View/detailmovie.dart';
 import 'package:test/View/useracc.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
+///halaman homepage dimana terdapat beberapa poster movie mulai dari Now Play sampai Popular
 class homepage extends StatefulWidget {
   const homepage({super.key});
 
@@ -16,6 +17,10 @@ class homepage extends StatefulWidget {
 }
 
 class _homepageState extends State<homepage> {
+  /// *[listNowPlay] adalah variabel yang diguankan untuk mendapatkan nilai Now Play melalu future dari Future Builder `listNowPlay`.
+  ///
+  /// *[listpopular] adalah variabel yang digunakan untuk mendapatkan nilai Popular melaui future dari Future Builder `listpopular`.
+  ///
   var listNowPlay;
   var listpopular;
   @override
@@ -25,33 +30,12 @@ class _homepageState extends State<homepage> {
     listpopular = ApiPopularMovie().getPopular();
   }
 
-  // List<String> nowplaying = [
-  //   'assets/covermovie.jpg',
-  //   'assets/covermovie.jpg',
-  //   'assets/covermovie.jpg',
-  //   'assets/covermovie.jpg',
-  //   'assets/covermovie.jpg',
-  //   'assets/covermovie.jpg',
-  //   'assets/covermovie.jpg',
-  //   'assets/covermovie.jpg',
-  //   'assets/covermovie.jpg',
-  //   'assets/covermovie.jpg',
-  //   'assets/covermovie.jpg',
-  //   'assets/covermovie.jpg',
-  //   'assets/covermovie.jpg',
-  //   'assets/covermovie.jpg',
-  //   'assets/covermovie.jpg',
-  //   'assets/covermovie.jpg',
-  //   'assets/covermovie.jpg',
-  //   'assets/covermovie.jpg',
-  //   'assets/covermovie.jpg',
-  //   'assets/covermovie.jpg',
-  //   'assets/covermovie.jpg',
-  // ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
+
+      ///selain dari tampilan Now Play dan Popular , terdapat juga Navigation Bar yang berisi button Home dan user informasi.
       bottomNavigationBar: Container(
         padding: const EdgeInsets.symmetric(horizontal: 45, vertical: 20),
         height: 80,
@@ -119,6 +103,7 @@ class _homepageState extends State<homepage> {
                     height: 20,
                   ),
                   Container(
+                    ///penggunaan Future Builder yang digunakan untuk menarik data dari API
                     child: FutureBuilder(
                         future: listNowPlay,
                         builder:

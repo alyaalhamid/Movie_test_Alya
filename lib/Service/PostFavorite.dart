@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:test/Model/Favorite.dart';
 
+/// [ApiPostFavorite] merupakan kode class untuk mengirimkan data dari link api.
 class ApiPostFavorite {
   final String apikey = '98c580af951d9cbf543ece8df822519c';
   Future<int?> postmyfavorite(int accid, PostFavorite data) async {

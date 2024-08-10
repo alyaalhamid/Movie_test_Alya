@@ -5,6 +5,7 @@ import 'package:test/View/Myfavorite.dart';
 import 'package:test/View/home.dart';
 import 'package:test/View/Watchlistview.dart';
 
+//halaman user account di gunakan sebagai wadah dalam melihat movie favorite dan watchlist apa saja yang telah di pilih.
 class useraccount extends StatefulWidget {
   const useraccount({super.key});
 

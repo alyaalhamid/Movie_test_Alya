@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:test/Model/DiscoverMovie.dart';
 import 'package:http/http.dart' as http;
 
+/// [ApiDiscoMovie] merupakan kode class untuk menarik data dari link api.
 class ApiDiscoMovie {
   final String apikey = '98c580af951d9cbf543ece8df822519c';
   Future<List<DiscovMovie>?> getNowPlay() async {

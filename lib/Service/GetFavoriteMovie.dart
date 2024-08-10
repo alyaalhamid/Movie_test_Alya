@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:test/Model/GetFavorit.dart';
 
+/// [ApiFavoriteMovie] merupakan kode class untuk menarik data dari link api.
 class ApiFavoriteMovie {
   final String apikey = '98c580af951d9cbf543ece8df822519c';
 

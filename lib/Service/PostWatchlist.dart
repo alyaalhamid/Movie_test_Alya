@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:test/Model/Watchlist.dart';
 
+/// [ApiPostwatchlist] merupakan kode class untuk mengirimkan data dari link api.
 class ApiPostwatchlist {
   final String apikey = '98c580af951d9cbf543ece8df822519c';
   Future<int?> postmywatchlist(int accid, PostWatchlist data) async {

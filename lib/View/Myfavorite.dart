@@ -9,6 +9,9 @@ class MyFavorite extends StatefulWidget {
 }
 
 class _MyFavoriteState extends State<MyFavorite> {
+  /// [moviefavorite]  merupakan variabel yang diguankana untuk mendapatkan data dari future `moviefavorite`.
+  ///
+  /// [accountid] berisikan nilai static yang digunakan untuk memudahkan dalam penarikan data yang memerlukan account id
   var moviefavorite;
   int accountid = 1;
 

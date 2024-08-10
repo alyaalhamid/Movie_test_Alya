@@ -1,3 +1,4 @@
+/// [detaildiscmovie] merupakan model yang di dapatkan dari response API, model ini di wajibkan ada di setiap API
 class detaildiscmovie {
   bool? adult;
   String? backdropPath;
